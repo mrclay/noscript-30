@@ -10,10 +10,21 @@ Games in this category aim to be accessible in modern desktop and mobile browser
 
 These games should work in browsers available before JavaScript's introduction in 1995, notably Netscape Navigator 1.0, Internet Explorer 1.0, Mosaic 1.0, or MultiTorg Opera 1.0.
 
+## Play an example
+
+```
+git clone https://github.com/mrclay/noscript-30.git
+cd noscript-30/express
+npm ci
+npm run start
+```
+
+Then open http://localhost:3000/
+
 ## Tech that may be of use
 
-- [`<meta http-equiv="refresh" content="1">`](https://en.wikipedia.org/wiki/Meta_refresh) should allow 1FPS "animation" (with better effects via CSS).
-- In theory, [streaming HTML to an `iframe`](https://dev.to/tigt/the-weirdly-obscure-art-of-streamed-html-4gc2) should allow you to control the visible area (as the document increases in length--points off for crashing the browser).
+- [`<meta http-equiv="refresh" content="1">`](https://en.wikipedia.org/wiki/Meta_refresh) allows 1FPS "animation" (with better effects via CSS).
+- [Streaming HTML to an `iframe`](https://dev.to/tigt/the-weirdly-obscure-art-of-streamed-html-4gc2) allows you to stack "frames" of content so the latest is always visible (as the document increases in length--points off for crashing the browser).
 - [express-session](https://www.npmjs.com/package/express-session), [PHP sessions](https://www.php.net/manual/en/session.examples.basic.php), etc.
 - Links and forms can send user selections, including to named `iframe` elements  
 - [CSS state machines](https://css-tricks.com/a-complete-state-machine-made-with-html-checkboxes-and-css/)

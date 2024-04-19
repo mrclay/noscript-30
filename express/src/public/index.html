@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NOSCRIPT 30 Invaders</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="poc">
+      <h1>NOSCRIPT 30 Invaders</h1>
+
+      <iframe class="screen" src="/stream"></iframe>
+
+      <div class="fire">Click to fire!</div>
+      <form
+        class="playerButtons"
+        method="get"
+        action="/fire"
+        target="hiddenIframe"
+      >
+        <button type="submit" name="player" value="0">&uarr;</button>
+        <button type="submit" name="player" value="1">&uarr;</button>
+        <button type="submit" name="player" value="2">&uarr;</button>
+        <button type="submit" name="player" value="3">&uarr;</button>
+        <button type="submit" name="player" value="4">&uarr;</button>
+        <button type="submit" name="player" value="5">&uarr;</button>
+        <button type="submit" name="player" value="6">&uarr;</button>
+        <button type="submit" name="player" value="7">&uarr;</button>
+        <button type="submit" name="player" value="8">&uarr;</button>
+        <button type="submit" name="player" value="9">&uarr;</button>
+        <button type="submit" name="player" value="10">&uarr;</button>
+        <button type="submit" name="player" value="11">&uarr;</button>
+        <button type="submit" name="player" value="12">&uarr;</button>
+        <button type="submit" name="player" value="13">&uarr;</button>
+        <button type="submit" name="player" value="14">&uarr;</button>
+        <button type="submit" name="player" value="15">&uarr;</button>
+        <button type="submit" name="player" value="16">&uarr;</button>
+        <button type="submit" name="player" value="17">&uarr;</button>
+        <button type="submit" name="player" value="18">&uarr;</button>
+        <button type="submit" name="player" value="19">&uarr;</button>
+        <button type="submit" name="player" value="20">&uarr;</button>
+        <button type="submit" name="player" value="21">&uarr;</button>
+        <button type="submit" name="player" value="22">&uarr;</button>
+        <button type="submit" name="player" value="23">&uarr;</button>
+        <button type="submit" name="player" value="24">&uarr;</button>
+      </form>
+
+      <iframe name="hiddenIframe" src="/fire"></iframe>
+    </div>
+  </body>
+</html>

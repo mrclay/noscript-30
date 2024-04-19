@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NOSCRIPT 30 Proofs of concept</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body,
+      html,
+      body > div {
+        height: 100%;
+        color: #fff;
+      }
+      body > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Game Over</h2>
+      <div>Time: {{ELAPSED}} seconds</div>
+      <div>Fired: {{NUMSHOTS}} times</div>
+      <div>Score: {{SCORE}}</div>
+      <form action="/stream">
+        <p>
+          <button type="submit" name="restart" value="1">Play Again</button>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
