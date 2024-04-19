@@ -16,3 +16,4 @@ These games should work in browsers available before JavaScript's introduction i
 - In theory, [streaming HTML to an `iframe`](https://dev.to/tigt/the-weirdly-obscure-art-of-streamed-html-4gc2) should allow you to control the visible area (as the document increases in length--points off for crashing the browser).
 - [express-session](https://www.npmjs.com/package/express-session), [PHP sessions](https://www.php.net/manual/en/session.examples.basic.php), etc.
 - Links and forms can send user selections, including to named `iframe` elements  
+- [CSS state machines](https://css-tricks.com/a-complete-state-machine-made-with-html-checkboxes-and-css/)
