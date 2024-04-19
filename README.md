@@ -4,7 +4,7 @@ The idea: In honor of [JavaScript's upcoming 30th birthday](https://www.webdesig
 
 ## HTML5 Category
 
-Games in this category aim to be accessible in modern desktop and mobile browsers. They should be interactive and the browser must not load any resources that allow scripting or pre-programmed elements (no service workers, no `object`, no `embed`, no `applet`, no browser extensions, no obscure scripting facilities). Users will have JavaScript enabled, so built-in browser-triggered events will fire, but must not be handled.
+Games in this category aim to be accessible in modern desktop and mobile browsers. They should be interactive and the browser must not load any resources that embed or allow scripting or pre-programmed elements (no `script`, no `on*` attributes, no service workers, no browser extensions, no `object`, `embed`, `applet`, or obscure scripting facilities). Users will have JavaScript enabled, so built-in browser-triggered events will fire, but must not be handled.
 
 ## 1995 Category
 
@@ -13,6 +13,6 @@ These games should work in browsers available before JavaScript's introduction i
 ## Tech that may be of use
 
 - [`<meta http-equiv="refresh" content="1">`](https://en.wikipedia.org/wiki/Meta_refresh) should allow 1FPS "animation" (with better effects via CSS).
-- In theory, [streaming HTML to an `iframe`](https://dev.to/tigt/the-weirdly-obscure-art-of-streamed-html-4gc2) should allow you to control the visible area (though the document will increase in length).
+- In theory, [streaming HTML to an `iframe`](https://dev.to/tigt/the-weirdly-obscure-art-of-streamed-html-4gc2) should allow you to control the visible area (as the document increases in length--points off for crashing the browser).
 - [express-session](https://www.npmjs.com/package/express-session), [PHP sessions](https://www.php.net/manual/en/session.examples.basic.php), etc.
 - Links and forms can send user selections, including to named `iframe` elements  
