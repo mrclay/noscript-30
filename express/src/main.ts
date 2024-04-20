@@ -59,6 +59,10 @@ app.get("/fire", async (req, res) => {
 app.get("/stream", async (req, res) => {
   res.setHeader("Cache-Control", "no-cache");
 
+  const cType = req.query.text
+    ? "text/plain;charset=utf8"
+    : "text/html;charset=utf8";
+
   if (req.query.restart) {
     state = structuredClone(initState);
   }
@@ -90,7 +94,7 @@ app.get("/stream", async (req, res) => {
   const pageLifeSec = 5;
   const fps = 5;
 
-  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Content-Type", cType);
   res.flushHeaders();
   res.write(`
     <!DOCTYPE html>
@@ -216,12 +220,17 @@ app.get("/stream", async (req, res) => {
   // "Game" loop
   while (keepGoing) {
     state.frame++;
-    let html = render();
-    res.write(`<div class="frame">${html}</div>`);
+    const html = render();
+    res.write(`<div class="frame">${html}</div>\n\n`);
 
     await new Promise((res) => setTimeout(res, 1e3 / fps));
   }
 
+  res.write(
+    `<!-- This page has loaded for ${pageLifeSec} seconds. To prevent ` +
+      `a browser memory issue, the page will now end and the meta refresh ` +
+      `will cause the page to be reloaded. -->\n\n`,
+  );
   res.write("</body></html>");
   res.end();
 });

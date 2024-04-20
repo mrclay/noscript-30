@@ -46,6 +46,46 @@
       </form>
 
       <iframe name="hiddenIframe" src="/fire"></iframe>
+
+      <h2>How does this work?</h2>
+      <p>
+        The screen is an iframe displaying the page <code>/stream</code>, which
+        is streamed to the browser: Every 250ms, server state is read and
+        processed, and a new <code>&lt;div class=&quot;frame&quot;&gt;</code> is
+        generated and flushed to the browser, which each
+        <code>div</code> stacking <em>on top of</em> the preceding ones.
+      </p>
+      <p>
+        You can see this stream by
+        <a href="/stream?text=1" target="_blank">viewing the page as text</a>
+        (while the game is running).
+      </p>
+      <h3>Won't this mage page eventually crash the browser?</h3>
+      <p>
+        Maybe, so the page stops generating at 5 seconds and that triggers a
+        meta refresh to reload the page. The reload causes a flicker that's not
+        too bad.
+      </p>
+      <p>
+        The fire button is 25 separate submit buttons that submit (to a hidden
+        iframe) the desired missile
+        <code>x</code> location to the <code>/fire</code> endpoint, which adds
+        it to server state. Each missile uses CSS animation to (hopefully) keep
+        it in sync with the server's 250ms delivery, but it's not perfect and
+        would be even worse in real-world network conditions.
+      </p>
+      <p>
+        This proof of concept does not use sessions, so only one browser can
+        play the game currently. (If you open more <code>/stream</code> tabs you
+        can make it run faster!)
+      </p>
+      <h3>Any other ideas?</h3>
+      <p>
+        Since the frames stack on each other, you could make them
+        semi-transparent to show a "trail" behind a sprite, or you could allow
+        "painting" on the screen via transparent links.
+      </p>
+      <p>The score could display in a separate streaming iframe, etc.</p>
     </div>
   </body>
 </html>
