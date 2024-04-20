@@ -1,5 +1,5 @@
 body {
-  --height: 400px;
+  --height: 300px;
   --width: 500px;
   --ball-h: 20px;
   --ball-w: 20px;
@@ -37,6 +37,16 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 5px;
+  animation: slide-up linear 250ms;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(var(--ball-h));
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .explosion span {
@@ -49,6 +59,19 @@ body {
   font-size: 40px;
   line-height: 40px;
   color: #fcda83;
+  animation: pump linear 250ms;
+}
+
+@keyframes pump {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.0);
+  }
 }
 
 .enemy {
@@ -58,6 +81,10 @@ body {
   font-size: 40px;
   margin-left: -10px;
   line-height: var(--ball-h);
+
+  &[data-even="1"] {
+    transform: scaleY(-1) translateY(10px);
+  }
 }
 
 /* These stack on top of each other while the HTML streams */
@@ -68,6 +95,7 @@ body {
   top: 0;
   left: 0;
   background: #333;
+  color: #fff;
   overflow: hidden;
 }
 
@@ -84,7 +112,7 @@ body {
   display: flex;
   border: 1px solid #666;
 
-  button {
+  & button {
     width: 20px;
     height: 20px;
     padding: 0;
@@ -92,6 +120,7 @@ body {
     border: 0;
     background: transparent;
     color: transparent;
+    cursor: pointer;
   }
 }
 
